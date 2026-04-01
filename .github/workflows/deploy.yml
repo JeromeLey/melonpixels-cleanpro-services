@@ -27,14 +27,12 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
-        working-directory: cleanpro-services
       - name: Build
         run: npm run build
-        working-directory: cleanpro-services
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: cleanpro-services/out
+          path: out
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
